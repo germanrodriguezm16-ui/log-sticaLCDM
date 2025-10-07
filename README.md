@@ -1,0 +1,2 @@
+# log-sticaLCDM
+Logística LCDM
