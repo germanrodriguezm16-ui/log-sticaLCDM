@@ -1,0 +1,8 @@
+[build]
+  command = "cd log-sticaLCDM-app && npm run build"
+  publish = "log-sticaLCDM-app/dist"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
