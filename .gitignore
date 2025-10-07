@@ -1,0 +1,12 @@
+# Node modules
+log-sticaLCDM-app/node_modules/
+
+# Local env files
+log-sticaLCDM-app/.env.local
+.env.local
+
+# npm lockfile (optional to ignore)
+log-sticaLCDM-app/package-lock.json
+
+# build output
+log-sticaLCDM-app/dist/
