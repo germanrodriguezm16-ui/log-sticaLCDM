@@ -22,14 +22,24 @@ export async function loadCategorias(): Promise<Categoria[]> {
       console.error('supabase load error', error)
       return []
     }
-    return (data as any[]).map((d) => ({ id: d.id, name: d.name, color: normalizeColor(d.color) }))
+    return (data as any[]).map((d) => {
+      const orig = d.color
+      const normalized = normalizeColor(orig)
+      if (orig && !normalized) console.warn('storage: invalid color value from DB', { id: d.id, name: d.name, orig })
+      return { id: d.id, name: d.name, color: normalized }
+    })
   }
 
   try {
     const raw = localStorage.getItem(KEY)
     if (!raw) return []
     const arr = JSON.parse(raw) as Categoria[]
-    return arr.map(a => ({ ...a, color: normalizeColor(a.color) }))
+    return arr.map(a => {
+      const orig = (a as any).color
+      const normalized = normalizeColor(orig)
+      if (orig && !normalized) console.warn('storage: invalid color value in localStorage', { id: a.id, name: a.name, orig })
+      return { ...a, color: normalized }
+    })
   } catch (e) {
     console.error('loadCategorias error', e)
     return []

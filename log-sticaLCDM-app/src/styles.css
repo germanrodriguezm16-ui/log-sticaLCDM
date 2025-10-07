@@ -30,13 +30,16 @@ body{margin:0;font-family:Inter,Segoe UI,Roboto,Helvetica,Arial,sans-serif;backg
 .icon-btn{background:transparent;border:1px solid #e6eef8;padding:6px;border-radius:8px;color:#0f172a;width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center}
 .icon-btn:hover{background:#f1f8ff}
 
+.swatch-preview{display:flex;align-items:center;margin-right:8px}
+.swatch-preview .color-swatch{width:36px;height:28px;border-radius:6px;border:1px solid #e6eef8}
+
 /* Responsive: on small screens stack actions below */
 @media (max-width:520px){
   .categoria-card{flex-direction:column;align-items:flex-start}
   .categoria-card .color-band{width:100%;height:6px;border-radius:6px}
   .categoria-card .actions{width:100%;display:flex;justify-content:flex-end;gap:8px;margin-top:8px}
   .categoria-card .info .title strong{white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-  .categoria-card .info .title strong{display:block;line-clamp:2;-webkit-line-clamp:2}
+  .categoria-card .info .title strong{display:block;-webkit-line-clamp:2;line-clamp:2}
 }
 
 /* small swatch used in the form */
