@@ -26,7 +26,7 @@ body{margin:0;font-family:Inter,Segoe UI,Roboto,Helvetica,Arial,sans-serif;backg
 .categoria-card .color-band{width:14px;height:100%;border-top-left-radius:14px;border-bottom-left-radius:14px}
 .categoria-card .info{flex:1;min-width:0}
 .categoria-card .info .title strong{display:block;font-size:18px;color:#0f172a;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.categoria-card .balance{display:flex;align-items:center;justify-content:center;min-width:120px;margin-left:8px}
+.categoria-card .balance{display:flex;align-items:center;justify-content:center;min-width:120px;margin-left:auto}
 .categoria-card .balance .balance-amount{font-weight:700;color:rgba(0,0,0,0.8)}
 .categoria-card .actions{display:flex;gap:8px;flex-shrink:0;align-items:center}
 .icon-btn{background:transparent;border:1px solid #e6eef8;padding:6px;border-radius:8px;color:#0f172a;width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center}
