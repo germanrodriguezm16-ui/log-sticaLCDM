@@ -1,5 +1,5 @@
 [build]
-  command = "cd log-sticaLCDM-app && npm ci && npm run build"
+  command = "cd log-sticaLCDM-app && npm install && npm run build"
   publish = "log-sticaLCDM-app/dist"
 
 [[redirects]]
