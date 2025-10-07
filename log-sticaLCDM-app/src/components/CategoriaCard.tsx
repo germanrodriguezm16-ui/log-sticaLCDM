@@ -2,7 +2,13 @@ import React from 'react'
 import { Categoria } from '../pages/Categorias'
 
 export default function CategoriaCard({ categoria, onEdit, onDelete }: { categoria: Categoria; onEdit: () => void; onDelete: () => void }) {
-  const color = categoria.color || '#d1d5db'
+  let color = categoria.color || '#d1d5db'
+  // normalize simple hex like 'ff0000' -> '#ff0000'
+  if (color && typeof color === 'string') {
+    color = color.trim()
+    if (/^[0-9a-fA-F]{3}$/.test(color)) color = '#' + color
+    else if (/^[0-9a-fA-F]{6}$/.test(color)) color = '#' + color
+  }
   return (
     <div className="categoria-card">
       <div className="color-band" style={{ background: color }} />

@@ -22,8 +22,8 @@ body{margin:0;font-family:Inter,Segoe UI,Roboto,Helvetica,Arial,sans-serif;backg
 /* Categorías */
 .categoria-card{display:flex;align-items:center;gap:12px;box-shadow:0 8px 30px rgba(15,23,42,0.06);background:#fff;border-radius:12px;padding:14px}
 .categoria-card{display:flex;align-items:center;gap:12px;box-shadow:0 8px 30px rgba(15,23,42,0.06);background:#fff;border-radius:12px;padding:12px}
-.categoria-card{display:flex;align-items:stretch;gap:12px;box-shadow:0 8px 30px rgba(15,23,42,0.06);background:#fff;border-radius:12px;padding:12px}
-.categoria-card .color-band{width:10px;height:100%;border-radius:8px}
+.categoria-card{display:flex;align-items:stretch;gap:12px;box-shadow:0 8px 30px rgba(15,23,42,0.06);background:#fff;border-radius:12px;padding:12px;overflow:hidden}
+.categoria-card .color-band{width:10px;height:100%;border-top-left-radius:12px;border-bottom-left-radius:12px}
 .categoria-card .info{flex:1;min-width:0}
 .categoria-card .info .title strong{display:block;font-size:16px;color:#0f172a;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .categoria-card .actions{display:flex;gap:8px;flex-shrink:0;align-items:center}
