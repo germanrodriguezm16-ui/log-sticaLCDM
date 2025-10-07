@@ -12,27 +12,16 @@ export default function CategoriaCard({ categoria, onEdit, onDelete }: { categor
   const valid = !!color
   if (!valid) console.warn('CategoriaCard: invalid color for category', { id: categoria.id, name: categoria.name, color: categoria.color })
 
-  function hexToRgba(hex: string | undefined, alpha = 0.08) {
-    if (!hex) return undefined
-    const h = hex.replace('#', '')
-    if (h.length !== 6) return undefined
-    const r = parseInt(h.substring(0, 2), 16)
-    const g = parseInt(h.substring(2, 4), 16)
-    const b = parseInt(h.substring(4, 6), 16)
-    return `rgba(${r}, ${g}, ${b}, ${alpha})`
-  }
-
-  const tint = hexToRgba(color)
+  // We apply the exact color chosen as the card background (normalized hex expected)
+  const cardBg = color
 
   return (
-    <div className="categoria-card" data-color-present={valid ? '1' : '0'} style={tint ? { background: tint } : undefined}>
+    <div className="categoria-card" data-color-present={valid ? '1' : '0'} style={cardBg ? { background: cardBg } : undefined}>
       <div className="color-band" style={{ background: color }} />
       <div className="info">
         <div className="title"><strong title={categoria.name}>{categoria.name}</strong></div>
       </div>
-      <div className="swatch-preview">
-        <div className="color-swatch" style={{ background: color }} aria-hidden />
-      </div>
+      {/* Swatch preview removed per user request (color now applied to card background) */}
       <div className="actions" role="group" aria-label={`Acciones para ${categoria.name}`}>
         <button className="icon-btn" onClick={onEdit} aria-label={`Editar ${categoria.name}`} title="Editar">
           <span aria-hidden>✏️</span>

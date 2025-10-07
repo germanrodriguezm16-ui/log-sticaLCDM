@@ -30,15 +30,17 @@ body{margin:0;font-family:Inter,Segoe UI,Roboto,Helvetica,Arial,sans-serif;backg
 .icon-btn{background:transparent;border:1px solid #e6eef8;padding:6px;border-radius:8px;color:#0f172a;width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center}
 .icon-btn:hover{background:#f1f8ff}
 
-.swatch-preview{display:flex;align-items:center;margin-right:8px}
+/* swatch preview removed: keep old classes for compatibility but hide them */
+.swatch-preview{display:none}
 .swatch-preview .color-swatch{width:36px;height:28px;border-radius:6px;border:1px solid #e6eef8}
 
 /* Ensure buttons keep white background on tinted cards */
-.categoria-card .icon-btn,.categoria-card .btn{background:#fff;border:1px solid #e6eef8}
-.categoria-card .icon-btn:hover{background:#fff}
+.categoria-card .icon-btn,.categoria-card .btn{background:#fff;border:1px solid rgba(0,0,0,0.08);box-shadow:0 6px 18px rgba(2,6,23,0.08)}
+.categoria-card .icon-btn:hover{background:#fff;transform:translateY(-1px)}
 
 /* stronger contrast for title on tinted backgrounds */
-.categoria-card[data-color-present="1"] .title strong{color:#071236}
+.categoria-card[data-color-present="1"]{color:#071236}
+.categoria-card[data-color-present="1"] .title strong{color:inherit}
 
 /* Responsive: on small screens stack actions below */
 @media (max-width:520px){
