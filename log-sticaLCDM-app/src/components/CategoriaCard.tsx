@@ -21,8 +21,12 @@ export default function CategoriaCard({ categoria, onEdit, onDelete }: { categor
       <div className="info">
         <div className="title"><strong title={categoria.name}>{categoria.name}</strong></div>
       </div>
+      {/* Reserved area for future balance display */}
+      <div className="balance" aria-hidden>
+        <div className="balance-amount">$0.00</div>
+      </div>
       {/* Swatch preview removed per user request (color now applied to card background) */}
-      <div className="actions" role="group" aria-label={`Acciones para ${categoria.name}`}>
+  <div className="actions" role="group" aria-label={`Acciones para ${categoria.name}`}>
         <button className="icon-btn" onClick={onEdit} aria-label={`Editar ${categoria.name}`} title="Editar">
           <span aria-hidden>✏️</span>
         </button>
