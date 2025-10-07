@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import CategoriaCard from '../components/CategoriaCard'
 import CategoriaForm from '../components/CategoriaForm'
-import { loadCategorias, saveCategorias } from '../lib/storage'
+import { loadCategorias, saveCategorias, importLocalToServerProgress } from '../lib/storage'
 
 export type Categoria = {
   id: string
@@ -15,12 +15,16 @@ export default function Categorias() {
   const [showForm, setShowForm] = useState(false)
 
   useEffect(() => {
-    const data = loadCategorias()
-    setCategorias(data)
+    let mounted = true
+    ;(async () => {
+      const data = await loadCategorias()
+      if (mounted) setCategorias(data)
+    })()
+    return () => { mounted = false }
   }, [])
 
   useEffect(() => {
-    saveCategorias(categorias)
+    ;(async () => { await saveCategorias(categorias) })()
   }, [categorias])
 
   function handleCreate() {
@@ -55,6 +59,11 @@ export default function Categorias() {
         <h2>Categorías de socios</h2>
         <div>
           <button className="btn large" onClick={handleCreate} aria-label="Crear nueva categoría">Nueva categoría</button>
+          <button className="btn secondary" style={{marginLeft:12}} onClick={async () => {
+            const cb = (m: string) => alert(m)
+            const fn = importLocalToServerProgress(cb)
+            await fn()
+          }}>Importar local → servidor</button>
         </div>
       </div>
 

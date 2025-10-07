@@ -7,7 +7,8 @@ const items = [
   { to: '/devoluciones', label: 'Devoluciones' },
   { to: '/inventario', label: 'Inventario' },
   { to: '/transacciones', label: 'Transacciones' },
-  { to: '/socios', label: 'Socios' }
+  { to: '/socios', label: 'Socios' },
+  { to: '/diagnostico', label: 'Diagnóstico' }
 ]
 
 export default function Sidebar() {

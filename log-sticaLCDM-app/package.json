@@ -5,9 +5,11 @@
   "scripts": {
   "dev": "vite --host",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "migration:new": "node scripts/create_migration.js"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.0.0",
     "@types/uuid": "^11.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

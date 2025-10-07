@@ -2,6 +2,7 @@ import React from 'react'
 import { Routes, Route, Link } from 'react-router-dom'
 import Sidebar from './components/Sidebar'
 import Categorias from './pages/Categorias'
+import Diagnostico from './pages/Diagnostico'
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
           <Route path="/inventario" element={<h2>Inventario</h2>} />
           <Route path="/transacciones" element={<h2>Transacciones</h2>} />
           <Route path="/socios" element={<Categorias />} />
+          <Route path="/diagnostico" element={<Diagnostico />} />
         </Routes>
       </main>
     </div>
