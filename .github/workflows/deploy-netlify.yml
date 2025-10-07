@@ -16,7 +16,7 @@ jobs:
       - name: Build site
         working-directory: ./log-sticaLCDM-app
         run: |
-          npm ci
+          npm install --no-audit --no-fund
           npm run build
       - name: Install Netlify CLI
         run: npm install -g netlify-cli
