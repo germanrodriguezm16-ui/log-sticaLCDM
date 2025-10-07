@@ -33,6 +33,13 @@ body{margin:0;font-family:Inter,Segoe UI,Roboto,Helvetica,Arial,sans-serif;backg
 .swatch-preview{display:flex;align-items:center;margin-right:8px}
 .swatch-preview .color-swatch{width:36px;height:28px;border-radius:6px;border:1px solid #e6eef8}
 
+/* Ensure buttons keep white background on tinted cards */
+.categoria-card .icon-btn,.categoria-card .btn{background:#fff;border:1px solid #e6eef8}
+.categoria-card .icon-btn:hover{background:#fff}
+
+/* stronger contrast for title on tinted backgrounds */
+.categoria-card[data-color-present="1"] .title strong{color:#071236}
+
 /* Responsive: on small screens stack actions below */
 @media (max-width:520px){
   .categoria-card{flex-direction:column;align-items:flex-start}

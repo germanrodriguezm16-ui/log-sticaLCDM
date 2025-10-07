@@ -11,8 +11,21 @@ export default function CategoriaCard({ categoria, onEdit, onDelete }: { categor
   }
   const valid = !!color
   if (!valid) console.warn('CategoriaCard: invalid color for category', { id: categoria.id, name: categoria.name, color: categoria.color })
+
+  function hexToRgba(hex: string | undefined, alpha = 0.08) {
+    if (!hex) return undefined
+    const h = hex.replace('#', '')
+    if (h.length !== 6) return undefined
+    const r = parseInt(h.substring(0, 2), 16)
+    const g = parseInt(h.substring(2, 4), 16)
+    const b = parseInt(h.substring(4, 6), 16)
+    return `rgba(${r}, ${g}, ${b}, ${alpha})`
+  }
+
+  const tint = hexToRgba(color)
+
   return (
-    <div className="categoria-card" data-color-present={valid ? '1' : '0'}>
+    <div className="categoria-card" data-color-present={valid ? '1' : '0'} style={tint ? { background: tint } : undefined}>
       <div className="color-band" style={{ background: color }} />
       <div className="info">
         <div className="title"><strong title={categoria.name}>{categoria.name}</strong></div>
