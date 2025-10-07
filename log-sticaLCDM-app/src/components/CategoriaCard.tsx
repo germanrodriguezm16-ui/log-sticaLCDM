@@ -10,8 +10,12 @@ export default function CategoriaCard({ categoria, onEdit, onDelete }: { categor
         <div className="title"><strong title={categoria.name}>{categoria.name}</strong></div>
       </div>
       <div className="actions" role="group" aria-label={`Acciones para ${categoria.name}`}>
-        <button className="btn secondary" onClick={onEdit} aria-label={`Editar ${categoria.name}`}>Editar</button>
-        <button className="btn" onClick={onDelete} aria-label={`Eliminar ${categoria.name}`}>Eliminar</button>
+        <button className="icon-btn" onClick={onEdit} aria-label={`Editar ${categoria.name}`} title="Editar">
+          <span aria-hidden>✏️</span>
+        </button>
+        <button className="icon-btn" onClick={onDelete} aria-label={`Eliminar ${categoria.name}`} title="Eliminar">
+          <span aria-hidden>🗑️</span>
+        </button>
       </div>
     </div>
   )
