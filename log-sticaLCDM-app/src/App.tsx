@@ -3,12 +3,14 @@ import { Routes, Route, Link } from 'react-router-dom'
 import Sidebar from './components/Sidebar'
 import Categorias from './pages/Categorias'
 import Diagnostico from './pages/Diagnostico'
+import ConnectionStatus from './components/ConnectionStatus'
 
 export default function App() {
   return (
     <div className="app">
       <Sidebar />
       <main className="content">
+        <div style={{display:'flex',justifyContent:'flex-end',padding:12}}><ConnectionStatus /></div>
         <Routes>
           <Route path="/" element={<h2>Bienvenido a Log-sticaLCDM</h2>} />
           <Route path="/pedidos" element={<h2>Pedidos</h2>} />
