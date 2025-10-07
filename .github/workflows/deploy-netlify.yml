@@ -25,5 +25,4 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         run: |
-          cd ./log-sticaLCDM-app
-          netlify deploy --prod --dir=dist --site=$NETLIFY_SITE_ID
+          netlify deploy --prod --dir=./log-sticaLCDM-app/dist --site=$NETLIFY_SITE_ID
